@@ -20,7 +20,13 @@ you must also describe why you included the table, and what information it revea
 这里放table
 
 # Chart1
+```{r include=FALSE}
+source("scripts/chart1.R")
+```
 
+```{r,echo=FALSE, message=FALSE,eval=TRUE}
+chart1_plot
+```
 
 # Chart2
 Wentao 的任务 Chart 2,3 得用不同的Chart 我的Chart 1 用的 geom_smooth不能跟我重复
