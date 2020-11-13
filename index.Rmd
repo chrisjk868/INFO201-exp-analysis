@@ -1,7 +1,30 @@
 ---
 title: "CO2 Emission"
-author: "Yuhan Xu"
+author: "Yuhan Xu, Christopher, Wentao Hu"
 date: "11/13/2020"
 output: html_document
 ---
+
+# Introduction
+## Purpose
+Carbon emissions has long been an arguable topic as its pollution to the world climate.  Harmful consequences like the Greenhouse effect have called attention to the United Nations. The harm of carbon emissions to the environment has been recognized by everyone. But the improvement of human living standards is also a goal we need to pursue. We need to find a way that not only allows countries to develop and people enjoy a better life, but at the same time will not cause continuous deterioration of the environment due to increased carbon emissions. 
+
+## Data set
+The data set our group analyzed includes: carbon emissions (long-format) of each country from 1960 to 2018. Through the analysis of this data set, we can find out which countries have the largest carbon emissions, the annual changes in carbon emissions in these countries, the changes in global carbon emissions and etc.
+
+# Summary
+Chris写一段话包含5个value
+
+# Table
+you must also describe why you included the table, and what information it reveals.
+这里放table
+
+# Chart1
+
+
+# Chart2
+Wentao 的任务 Chart 2,3 得用不同的Chart 我的Chart 1 用的 geom_smooth不能跟我重复
+
+# Chart3
+
 
