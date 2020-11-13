@@ -12,6 +12,7 @@ library("kableExtra")
 ```
 
 # Introduction
+Currently, the United States is the country with the second highest carbon emissions in the world. We hope that by comparing the US carbon emissions and global carbon emissions data from 1960 to 2018, we can find the relationship between the two. Through the graph, we can find that before 2007, the US carbon emissions and global carbon emissions have both increased. But after 2007, carbon emissions in the United States showed a downward trend, while global carbon emissions continued to increase.
 ## Purpose
 Carbon emissions has long been an arguable topic as its pollution to the world climate.  Harmful consequences like the Greenhouse effect have called attention to the United Nations. The harm of carbon emissions to the environment has been recognized by everyone. But the improvement of human living standards is also a goal we need to pursue. We need to find a way that not only allows countries to develop and people enjoy a better life, but at the same time will not cause continuous deterioration of the environment due to increased carbon emissions.
 
@@ -35,7 +36,13 @@ column_spec(c(2,3,4), color = "black")
 The table above summarizes the information for our data set in descending order from the country with the highest net carbon export in the world to the lowest. in total it has 4 different columns(Name of the country, the duration by which data for carbon exports are recorded in years, the net carbon dioxide export of the country, and the rate of carbon export of each country by year). The most pertinent observations are the rate of carbon emissions for a country like China and a country like Afghanistan. As there are two distinctions between these countries. One being a developing country and the other being an underdeveloped country. The large distinction in terms of their CO2 export rate by year is massive and it also indicates their economic standing and growth.
 
 # Chart1
+```{r include=FALSE}
+source("scripts/chart1.R")
+```
 
+```{r,echo=FALSE, message=FALSE,eval=TRUE}
+chart1_plot
+```
 
 # Chart2
 Wentao 的任务 Chart 2,3 得用不同的Chart 我的Chart 1 用的 geom_smooth不能跟我重复
