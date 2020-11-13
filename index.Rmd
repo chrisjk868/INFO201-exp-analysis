@@ -39,7 +39,7 @@ The table above summarizes the information for our data set in descending order 
 ```{r include=FALSE}
 source("scripts/chart1.R")
 ```
-
+Currently, the United States is the country with the second highest carbon emissions in the world. We hope that by comparing the US carbon emissions and global carbon emissions data from 1960 to 2018, we can find the relationship between the two. Through the graph, we can find that before 2007, the US carbon emissions and global carbon emissions have both increased. But after 2007, carbon emissions in the United States showed a downward trend, while global carbon emissions continued to increase.
 ```{r,echo=FALSE, message=FALSE,eval=TRUE}
 chart1_plot
 ```
