@@ -6,6 +6,7 @@ output: html_document
 ---
 
 # Introduction
+Currently, the United States is the country with the second highest carbon emissions in the world. We hope that by comparing the US carbon emissions and global carbon emissions data from 1960 to 2018, we can find the relationship between the two. Through the graph, we can find that before 2007, the US carbon emissions and global carbon emissions have both increased. But after 2007, carbon emissions in the United States showed a downward trend, while global carbon emissions continued to increase.
 ## Purpose
 Carbon emissions has long been an arguable topic as its pollution to the world climate.  Harmful consequences like the Greenhouse effect have called attention to the United Nations. The harm of carbon emissions to the environment has been recognized by everyone. But the improvement of human living standards is also a goal we need to pursue. We need to find a way that not only allows countries to develop and people enjoy a better life, but at the same time will not cause continuous deterioration of the environment due to increased carbon emissions. 
 
