@@ -4,20 +4,35 @@ author: "Yuhan Xu, Christopher, Wentao Hu"
 date: "11/13/2020"
 output: html_document
 ---
+```{r setup, include = FALSE}
+source("scripts/table.R")
+install.packages("kableExtra")
+library("knitr")
+library("kableExtra")
+```
 
 # Introduction
 ## Purpose
-Carbon emissions has long been an arguable topic as its pollution to the world climate.  Harmful consequences like the Greenhouse effect have called attention to the United Nations. The harm of carbon emissions to the environment has been recognized by everyone. But the improvement of human living standards is also a goal we need to pursue. We need to find a way that not only allows countries to develop and people enjoy a better life, but at the same time will not cause continuous deterioration of the environment due to increased carbon emissions. 
+Carbon emissions has long been an arguable topic as its pollution to the world climate.  Harmful consequences like the Greenhouse effect have called attention to the United Nations. The harm of carbon emissions to the environment has been recognized by everyone. But the improvement of human living standards is also a goal we need to pursue. We need to find a way that not only allows countries to develop and people enjoy a better life, but at the same time will not cause continuous deterioration of the environment due to increased carbon emissions.
 
 ## Data set
 The data set our group analyzed includes: carbon emissions (long-format) of each country from 1960 to 2018. Through the analysis of this data set, we can find out which countries have the largest carbon emissions, the annual changes in carbon emissions in these countries, the changes in global carbon emissions and etc.
 
 # Summary
-Chris写一段话包含5个value
+For our data set we decided to calculate 5 summary information. They are individually: The total net world carbon dioxide export, The highest most recent carbon export, The lowest most recent carbon export, The country with the highest rate of carbon export growth, and the country with lowest rate of carbon export growth.
 
 # Table
-you must also describe why you included the table, and what information it reveals.
-这里放table
+```{r final_table, echo = FALSE}
+# Show the top 10 table (specifying the column names to display)
+# knitr::kable(final_table, col.names = c("country", "years_period", "net_co2_export", "co2_export_rate"), align = "lccrr")
+final_table %>%
+kable() %>%
+kable_styling() %>%
+row_spec(0, bold = TRUE, color = "black") %>%
+column_spec(1, bold = TRUE, border_right = TRUE, color = "black", background = "lightgrey") %>%
+column_spec(c(2,3,4), color = "black")
+```
+The table above summarizes the information for our data set in descending order from the country with the highest net carbon export in the world to the lowest. in total it has 4 different columns(Name of the country, the duration by which data for carbon exports are recorded in years, the net carbon dioxide export of the country, and the rate of carbon export of each country by year). The most pertinent observations are the rate of carbon emissions for a country like China and a country like Afghanistan. As there are two distinctions between these countries. One being a developing country and the other being an underdeveloped country. The large distinction in terms of their CO2 export rate by year is massive and it also indicates their economic standing and growth.
 
 # Chart1
 

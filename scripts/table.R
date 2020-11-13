@@ -18,4 +18,3 @@ aggregate_table <- co2_data %>%
             co2_export_rate = sig_fig(net_co2_export / years_period))
 
 final_table <- aggregate_table[with(aggregate_table, order(-net_co2_export)), ]
-
