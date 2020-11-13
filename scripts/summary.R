@@ -1,7 +1,7 @@
 install.packages("tidyverse")
 library("tidyverse")
 
-co2 <- read.csv('https://raw.githubusercontent.com/chrisjk868/INFO201-exp-analysis/master/scripts/export_20201025_1759.CSV?token=ANZXD3P6327HVSI2CH4OQWS7V2W6S',stringsAsFactors = FALSE)
+co2 <- read.csv('https://raw.githubusercontent.com/chrisjk868/INFO201-exp-analysis/master/export_20201025_1759.CSV',stringsAsFactors = FALSE)
 
 long_dataset <- gather(co2, key = country, value = co2_export,-X)
 long_dataset_co2 <- na.omit(long_dataset)
