@@ -1,9 +1,9 @@
 install.packages("tidyverse")
 library("tidyverse")
 
-co2 <- read.csv('https://raw.githubusercontent.com/chrisjk868/INFO201-exp-analysis/master/data/export_20201025_1759.CSV?token=ANZXD3POB2V3VVSIPVWL4227V2ITO',stringsAsFactors = FALSE)
+co2 <- read.csv('https://raw.githubusercontent.com/chrisjk868/INFO201-exp-analysis/master/scripts/export_20201025_1759.CSV?token=ANZXD3P6327HVSI2CH4OQWS7V2W6S',stringsAsFactors = FALSE)
 
-long_dataset <- gather(co2,key = country, value = co2_export,-X)
+long_dataset <- gather(co2, key = country, value = co2_export,-X)
 long_dataset_co2 <- na.omit(long_dataset)
 colnames(long_dataset_co2)[1] <- "year"
 
@@ -15,10 +15,10 @@ net_co2_export <- long_dataset_co2 %>%
   summarise(growth = max(co2_export) - min(co2_export))
 
 summary_info$world_net_co2_export <- sum(net_co2_export$growth)
-  
+
 summary_info$co2_max_recent <- long_dataset_co2 %>%
   filter(co2_export == max(co2_export)) %>%
-  filter(year == max(year)) %>% 
+  filter(year == max(year)) %>%
   select(country, year, co2_export)
 
 summary_info$co2_min_recent <- long_dataset_co2 %>%
@@ -37,4 +37,3 @@ summary_info$co2_min_rate <- long_dataset_co2 %>%
   summarise(growth = max(co2_export) - min(co2_export), duration = max(year) - min(year), growth_rate = growth / duration) %>%
   filter(growth_rate == min(growth_rate)) %>%
   select(country, growth_rate)
-  
