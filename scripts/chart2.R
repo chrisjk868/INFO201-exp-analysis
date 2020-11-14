@@ -12,4 +12,4 @@ chart2_plot <- ggplot(co2_us, aes(Year,United.States.of.America)) +
   scale_x_continuous("Year")+ 
   scale_y_continuous("CO2", breaks = seq(0,7000, by =500))+ 
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5)) + 
-  labs(title = "US CO2")
+  labs(title = "US carbon emissions")

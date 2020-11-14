@@ -7,6 +7,8 @@ output: html_document
 ```{r setup, include = FALSE}
 source("scripts/table.R")
 source("scripts/chart1.R")
+source("scripts/chart2.R")
+source("scripts/chart3.R")
 install.packages("kableExtra")
 library("knitr")
 library("kableExtra")
@@ -43,9 +45,13 @@ chart1_plot
 ```
 
 # Chart2
-As the United States has the highest GDP in the world, We hope that by listing the US carbon emissions data from 1960 to 2018, we will find the carbon emissions trends of the world's top countries. We can find that the carbon emissions in the United States have shown a downward trend after 2007. It can be speculated that after 2007, the economic center of the United States shifted to industries with low carbon emissions.
+United States has the highest GDP in the world, We hope that by listing the US carbon emissions data from 1960 to 2018, we will find the carbon emissions trends of the world's top countries. We can find that the carbon emissions in the United States have shown a downward trend after 2007. It can be speculated that after 2007, the economic center of the United States shifted to industries with low carbon emissions.
 ```{r,echo=FALSE, message=FALSE,eval=TRUE}
 chart2_plot
 ```
 
 # Chart3
+China is the fastest growing country in the world, by analyzes China’s carbon emissions to understand the country’s development relationship with it's carbon emissions.
+```{r,echo=FALSE, message=FALSE,eval=TRUE}
+chart3_plot
+```
