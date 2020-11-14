@@ -5,7 +5,7 @@ date: "11/13/2020"
 output: html_document
 ---
 ```{r setup, include = FALSE}
-install.packages("tidyverse")
+install.packages("tidyverse", repos = "http://cran.us.r-project.org")
 library("tidyverse")
 source("scripts/table.R")
 source("scripts/chart1.R")
