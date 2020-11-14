@@ -43,8 +43,9 @@ chart1_plot
 ```
 
 # Chart2
-Wentao 的任务 Chart 2,3 得用不同的Chart 我的Chart 1 用的 geom_smooth不能跟我重复
+As the United States has the highest GDP in the world, We hope that by listing the US carbon emissions data from 1960 to 2018, we will find the carbon emissions trends of the world's top countries. We can find that the carbon emissions in the United States have shown a downward trend after 2007. It can be speculated that after 2007, the economic center of the United States shifted to industries with low carbon emissions.
+```{r,echo=FALSE, message=FALSE,eval=TRUE}
+chart2_plot
+```
 
 # Chart3
-
-
