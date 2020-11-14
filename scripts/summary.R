@@ -1,9 +1,11 @@
 install.packages("tidyverse")
 library("tidyverse")
+install.packages("dplyr")
+library("dplyr")
 
 co2 <- read.csv('https://raw.githubusercontent.com/chrisjk868/INFO201-exp-analysis/master/export_20201025_1759.CSV',stringsAsFactors = FALSE)
-
-long_dataset <- gather(co2, key = country, value = co2_export,-X)
+long_dataset <- co2 %>%
+  gather(key = country, value = co2_export,-X)
 long_dataset_co2 <- na.omit(long_dataset)
 colnames(long_dataset_co2)[1] <- "year"
 
