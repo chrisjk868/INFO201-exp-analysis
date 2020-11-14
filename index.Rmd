@@ -5,6 +5,8 @@ date: "11/13/2020"
 output: html_document
 ---
 ```{r setup, include = FALSE}
+install.packages("tidyverse")
+library("tidyverse")
 source("scripts/table.R")
 source("scripts/chart1.R")
 install.packages("kableExtra")
