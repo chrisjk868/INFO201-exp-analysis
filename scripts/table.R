@@ -1,3 +1,5 @@
+library("tidyverse")
+library("dplyr")
 co2_table <- read.csv('https://raw.githubusercontent.com/chrisjk868/INFO201-exp-analysis/master/export_20201025_1759.CSV',stringsAsFactors = FALSE)
 long_conversion <- gather(co2, key = country, value = co2_export,-X)
 co2_data <- na.omit(long_conversion)

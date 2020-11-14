@@ -5,6 +5,7 @@ library("dplyr")
 
 co2 <- read.csv('https://raw.githubusercontent.com/chrisjk868/INFO201-exp-analysis/master/export_20201025_1759.CSV',stringsAsFactors = FALSE)
 long_dataset <- co2 %>%
+  as.data.frame %>% 
   gather(key = country, value = co2_export,-X)
 long_dataset_co2 <- na.omit(long_dataset)
 colnames(long_dataset_co2)[1] <- "year"
