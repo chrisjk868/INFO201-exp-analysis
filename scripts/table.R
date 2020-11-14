@@ -1,9 +1,10 @@
 library("tidyverse")
-library("dplyr")
-co2_table <- read.csv('https://raw.githubusercontent.com/chrisjk868/INFO201-exp-analysis/master/export_20201025_1759.CSV',stringsAsFactors = FALSE)
-long_conversion <- gather(co2, key = country, value = co2_export,-X)
-co2_data <- na.omit(long_conversion)
-colnames(co2_data)[1] <- "year"
+co2 <- read.csv('https://raw.githubusercontent.com/chrisjk868/INFO201-exp-analysis/master/export_20201025_1759.CSV',stringsAsFactors = FALSE)
+co2_table <- data.frame(co2)
+colnames(co2_table)[1] <- "year"
+co2_data <- co2_table %>% 
+  gather(key = country, value = co2_export,-year)
+co2_data <- na.omit(co2_data)
 
 round_two <- function(num) {
   return(round(num, digits = 2))

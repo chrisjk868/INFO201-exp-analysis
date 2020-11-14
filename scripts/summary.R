@@ -1,42 +1,26 @@
-install.packages("tidyverse")
 library("tidyverse")
-install.packages("dplyr")
 library("dplyr")
 
 co2 <- read.csv('https://raw.githubusercontent.com/chrisjk868/INFO201-exp-analysis/master/export_20201025_1759.CSV',stringsAsFactors = FALSE)
-long_dataset <- co2 %>%
-  as.data.frame %>% 
-  gather(key = country, value = co2_export,-X)
-long_dataset_co2 <- na.omit(long_dataset)
-colnames(long_dataset_co2)[1] <- "year"
+dataset_co2 <- as.data.frame(co2) 
+colnames(dataset_co2)[1] <- "year"
 
 # A function that takes in a dataset and returns a list of info about it:
 summary_info <- list()
 
-net_co2_export <- long_dataset_co2 %>%
-  group_by(country) %>%
-  summarise(growth = max(co2_export) - min(co2_export))
+net_co2_export <- dataset_co2 %>%
+  sapply(range)
 
-summary_info$world_net_co2_export <- sum(net_co2_export$growth)
+net_co2_export <- rbind(net_co2_export, net_co2_export[2, ] - net_co2_export[1, ])
 
-summary_info$co2_max_recent <- long_dataset_co2 %>%
-  filter(co2_export == max(co2_export)) %>%
-  filter(year == max(year)) %>%
-  select(country, year, co2_export)
+summary_info$world_net_co2_export <- sum(net_co2_export[3, ], na.rm = T) - 58
 
-summary_info$co2_min_recent <- long_dataset_co2 %>%
-  filter(co2_export == min(co2_export)) %>%
-  filter(year == max(year)) %>%
-  select(country, year, co2_export)
+summary_info$co2_max_recent <- max(net_co2_export[3, ], na.rm = T)
 
-summary_info$co2_max_rate <- long_dataset_co2 %>%
-  group_by(country) %>%
-  summarise(growth = max(co2_export) - min(co2_export), duration = max(year) - min(year), growth_rate = growth / duration) %>%
-  filter(growth_rate == max(growth_rate)) %>%
-  select(country, growth_rate)
+summary_info$co2_min_recent <- min(net_co2_export[3, ], na.rm = T)
 
-summary_info$co2_min_rate <- long_dataset_co2 %>%
-  group_by(country) %>%
-  summarise(growth = max(co2_export) - min(co2_export), duration = max(year) - min(year), growth_rate = growth / duration) %>%
-  filter(growth_rate == min(growth_rate)) %>%
-  select(country, growth_rate)
+co2_rate <- rbind(net_co2_export, net_co2_export[3, ] / 58.0)
+
+summary_info$co2_max_rate <- max(co2_rate[4, ], na.rm = T)
+
+summary_info$co2_min_rate <- min(co2_rate[4, ], na.rm = T)
