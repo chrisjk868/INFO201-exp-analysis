@@ -51,7 +51,7 @@ chart2_plot
 ```
 
 # Chart3
-China is the fastest growing country in the world, by analyzes China’s carbon emissions to understand the country’s development relationship with it's carbon emissions.
+This graph shows the emissions of the countries with the largest emissions from 1960 to 2018. We can see that after 2010, China has replaced the United States as the world's largest carbon dioxide emitter.
 ```{r,echo=FALSE, message=FALSE,eval=TRUE}
 chart3_plot
 ```

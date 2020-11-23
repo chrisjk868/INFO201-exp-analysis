@@ -1,14 +1,25 @@
-library(tidyr)
-library(dplyr)
-library(ggplot2)
 
-co2 <- read.csv('https://raw.githubusercontent.com/chrisjk868/INFO201-exp-analysis/master/export_20201025_1759.CSV'
-                ,stringsAsFactors = FALSE)
-co2_us_cn_jp_gr_in <- select(co2, Year = X, United.States.of.America, China, Japan, Germany, India)
-co2_cn <- select(co2, Year = X, China)
+library("tidyr")
+library("dplyr")
+library("ggplot2")
 
-chart3_plot <- ggplot(data = co2_cn,) + 
-  geom_histogram(aes(x = Year), binwidth = 2, fill = "red")+
-  scale_x_continuous("Year")+
-  scale_y_continuous("CO2", breaks = seq(0,11,000, by =100))+
-  labs(title = "China carbon emissions")
+# co2 <- read.csv('https://raw.githubusercontent.com/chrisjk868/INFO201-exp-analysis/master/export_20201025_1759.CSV'
+#                 ,stringsAsFactors = FALSE)
+co2 <- read.csv('export_20201025_1759.csv',stringsAsFactors = FALSE)
+
+co2_top5<- co2 %>% 
+  filter(X == 1960 | X == 1970 | X == 1980 |
+           X == 1990 | X == 2000 | X ==2010 | X == 2018) %>%
+  gather( key = country_name, value = co2_emission, -X) %>%
+  group_by (X) %>%
+  filter(co2_emission == max(co2_emission, na.rm = TRUE)) %>%
+  arrange(X)
+
+
+ggplot(data = co2_top5)+
+  geom_col( mapping = aes(x = X, y = co2_emission))+
+  geom_text( mapping = aes(label = country_name ),check_overlap = TRUE, size = 3, nudge_y = 150 )
+
+
+
+
