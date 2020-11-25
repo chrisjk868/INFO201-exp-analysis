@@ -16,7 +16,7 @@ co2_top5<- co2 %>%
   arrange(X)
 
 
-ggplot(data = co2_top5)+
+chart3_plot <- ggplot(data = co2_top5)+
   geom_col( mapping = aes(x = X, y = co2_emission))+
   geom_text( mapping = aes(label = country_name ),check_overlap = TRUE, size = 3, nudge_y = 150 )
 

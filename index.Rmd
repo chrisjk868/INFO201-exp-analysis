@@ -6,6 +6,7 @@ output: html_document
 ---
 ```{r setup, include = FALSE}
 source("scripts/table.R")
+source("scripts/summary.R")
 source("scripts/chart1.R")
 source("scripts/chart2.R")
 source("scripts/chart3.R")
@@ -23,7 +24,11 @@ Carbon emissions has long been an arguable topic as its pollution to the world c
 The data set our group analyzed includes: carbon emissions (long-format) of each country from 1960 to 2018. Through the analysis of this data set, we can find out which countries have the largest carbon emissions, the annual changes in carbon emissions in these countries, the changes in global carbon emissions and etc.
 
 # Summary
-For our data set we decided to calculate 5 summary information. They are individually: The total net world carbon dioxide export, The highest most recent carbon export, The lowest most recent carbon export, The country with the highest rate of carbon export growth, and the country with lowest rate of carbon export growth.
+For our data set we decided to calculate 5 summary information. They are individually: The total net world carbon dioxide export, The highest most recent carbon export, The lowest most recent carbon export, The country with the highest rate of carbon export growth, and the country with lowest rate of carbon export growth.(world_net_co2_export, co2_max_recent, co2_min_recent, co2_max_rate, co2_min_rate)
+```{r,echo=FALSE, echo = FALSE}
+print(summary_info)
+
+```
 
 # Table
 ```{r final_table, echo = FALSE}
