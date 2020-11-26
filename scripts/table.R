@@ -18,6 +18,6 @@ aggregate_table <- co2_data %>%
   group_by(country) %>%
   summarise(period_of_years = round_two(max(year) - min(year)),
             net_co2_export = round_two(max(co2_export) - min(co2_export)),
-            co2_export_rate = format(sig_fig(net_co2_export / period_of_years), scientific = F))
+            co2_export_rate = sig_fig(net_co2_export / period_of_years))
 
 final_table <- aggregate_table[with(aggregate_table, order(-net_co2_export)), ]
