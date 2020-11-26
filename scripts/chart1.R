@@ -2,7 +2,8 @@ library(tidyr)
 library(dplyr)
 library(ggplot2)
 
-co2 <- read.csv('export_20201025_1759.csv',stringsAsFactors = FALSE)
+co2 <- read.csv('https://raw.githubusercontent.com/chrisjk868/INFO201-exp-analysis/master/export_20201025_1759.CSV'
+                ,stringsAsFactors = FALSE)
 co2_total <- mutate(co2, total_emission = rowSums(co2[,2:221],na.rm = T))
 
 chart1_plot <- ggplot(data = co2_total, mapping = aes(x = total_emission, y =
