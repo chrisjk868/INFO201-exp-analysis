@@ -24,11 +24,17 @@ Carbon emissions has long been an arguable topic as its pollution to the world c
 The data set our group analyzed includes: carbon emissions (long-format) of each country from 1960 to 2018. Through the analysis of this data set, we can find out which countries have the largest carbon emissions, the annual changes in carbon emissions in these countries, the changes in global carbon emissions and etc.
 
 # Summary
-For our data set we decided to calculate 5 summary information. They are individually: The total net world carbon dioxide export, The highest most recent carbon export, The lowest most recent carbon export, The country with the highest rate of carbon export growth, and the country with lowest rate of carbon export growth.(world_net_co2_export, co2_max_recent, co2_min_recent, co2_max_rate, co2_min_rate)
-```{r,echo=FALSE, echo = FALSE}
-print(summary_info)
+For our data set we decided to calculate 5 summary information. They are individually: The total net world carbon dioxide export, The highest most recent carbon export, The lowest most recent carbon export, the highest rate of carbon export growth, and the lowest rate of carbon export growth.(world_net_co2_export, co2_max_recent, co2_min_recent, co2_max_rate, co2_min_rate)
 
-```
+**world_net_co2_export:** `r format(summary_info$world_net_co2_export, scientific = F)` The total net world carbon dioxide export
+
+**co2_max_recent:** `r summary_info$co2_max_recent` The highest most recent carbon export
+
+**co2_min_recent:** `r summary_info$co2_min_recent` The lowest most recent carbon export
+
+**co2_max_rate:** `r summary_info$co2_max_rate` The highest rate of carbon export growth
+
+**co2_min_rate:** `r summary_info$co2_min_rate` The lowest rate of carbon export growth
 
 # Table
 ```{r final_table, echo = FALSE}
@@ -40,7 +46,6 @@ kable_styling() %>%
 row_spec(0, bold = TRUE, color = "black") %>%
 column_spec(1, bold = TRUE, border_right = TRUE, color = "black", background = "lightgrey") %>%
 column_spec(c(2,3,4), color = "black")
-  
 ```
 The table above summarizes the information for our data set in descending order from the country with the highest net carbon export in the world to the lowest. in total it has 4 different columns(Name of the country, the duration by which data for carbon exports are recorded in years, the net carbon dioxide export of the country, and the rate of carbon export of each country by year) (country, period_of_years, net_co2_export, co2_export_rate) in order. The most pertinent observations are the rate of carbon emissions for a country like China and a country like Afghanistan. As there are two distinctions between these countries. One being a developing country and the other being an underdeveloped country. The large distinction in terms of their CO2 export rate by year is massive and it also indicates their economic standing and growth.
 
